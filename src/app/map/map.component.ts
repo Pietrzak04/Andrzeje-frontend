@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, OnInit} from '@angular/core';
+import { Component, AfterViewInit  } from '@angular/core';
 import * as L from 'leaflet';
 import { EscapePointsService } from '../data-services/escape-points.service';
 import { MatDialog} from '@angular/material/dialog';
@@ -24,8 +24,8 @@ L.Marker.prototype.options.icon = iconDefault;
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements AfterViewInit, OnInit{
-  constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
+export class MapComponent implements AfterViewInit{
+constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
 
   private map: any;
 
@@ -53,10 +53,21 @@ export class MapComponent implements AfterViewInit, OnInit{
           this.openDialog(value);
       })
     })
+
+    this.map.on('click', (e:any) => {
+      this.openDialogAdding({lat: e.latlng.lat, lng: e.latlng.lng});
+      L.marker([e.latlng.lat, e.latlng.lng]).addTo(this.map);
+    })
   }
 
   openDialog(value: EscapePoints){
     this.dialog.open(MapDialogComponent, {
+      data: value
+    })
+  }
+
+  openDialogAdding(value: {}){
+    this.dialog.open(AddMarkOnMapDialogComponent, {
       data: value
     })
   }

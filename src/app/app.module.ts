@@ -19,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
 import {VotingMapComponent} from "./voting/voting-map/voting-map.component";
 import { VoteDialogComponent } from './voting/voting-map/vote-dialog/vote-dialog.component';
+import { AddMarkOnMapDialogComponent } from './map/add-mark-on-map-dialog/add-mark-on-map-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { VoteDialogComponent } from './voting/voting-map/vote-dialog/vote-dialog
     VotingComponent,
     VotingMapComponent,
     VoteDialogComponent,
+    MapDialogComponent,
+    AddMarkOnMapDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,8 @@ import { VoteDialogComponent } from './voting/voting-map/vote-dialog/vote-dialog
     MatButtonModule,
     BrowserAnimationsModule,
     MatCardModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
