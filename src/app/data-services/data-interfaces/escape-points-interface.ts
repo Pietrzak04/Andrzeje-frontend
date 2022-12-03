@@ -1,4 +1,5 @@
 export interface EscapePoints {
+  id: number;
   name: string;
   latitude: number;
   longitude: number;

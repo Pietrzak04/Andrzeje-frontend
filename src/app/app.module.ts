@@ -16,6 +16,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from "@angular/material/card";
+import {VotingMapComponent} from "./voting/voting-map/voting-map.component";
+import { VoteDialogComponent } from './voting/voting-map/vote-dialog/vote-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
     MapDialogComponent,
     VotingComponent,
     VotingMapComponent,
+    VoteDialogComponent,
   ],
   imports: [
     BrowserModule,

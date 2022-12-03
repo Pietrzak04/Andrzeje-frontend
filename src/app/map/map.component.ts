@@ -1,4 +1,4 @@
-import { Component, AfterViewInit  } from '@angular/core';
+import {Component, AfterViewInit, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 import { EscapePointsService } from '../data-services/escape-points.service';
 import { MatDialog} from '@angular/material/dialog';
@@ -25,7 +25,7 @@ L.Marker.prototype.options.icon = iconDefault;
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit, OnInit{
-constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
+  constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
 
   private map: any;
 
