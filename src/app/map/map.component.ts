@@ -4,6 +4,7 @@ import { EscapePointsService } from '../data-services/escape-points.service';
 import { MatDialog} from '@angular/material/dialog';
 import { MapDialogComponent } from './map-dialog/map-dialog.component';
 import { EscapePoints } from '../data-services/data-interfaces/escape-points-interface';
+import { AddMarkOnMapDialogComponent } from './add-mark-on-map-dialog/add-mark-on-map-dialog.component';
 
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
