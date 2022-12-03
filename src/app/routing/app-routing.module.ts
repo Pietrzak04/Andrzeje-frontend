@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EscapePointsMapComponent } from '../escape-points-map/escape-points-map.component';
-import { ChallengeMapComponent } from '../challenge-map/challenge-map.component';
+import { ChallengeMapComponent } from '../challenge/challenge-map/challenge-map.component';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 import {VotingComponent} from "../voting/voting.component";
 

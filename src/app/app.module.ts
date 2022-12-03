@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BottomNavBarComponent } from './bottom-nav-bar/bottom-nav-bar.component';
 import { EscapePointsMapComponent } from './escape-points-map/escape-points-map.component';
-import { ChallengeMapComponent } from './challenge-map/challenge-map.component';
+import { ChallengeMapComponent } from './challenge/challenge-map/challenge-map.component';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { VotingComponent } from './voting/voting.component';
@@ -21,6 +21,7 @@ import {VotingMapComponent} from "./voting/voting-map/voting-map.component";
 import { VoteDialogComponent } from './voting/voting-map/vote-dialog/vote-dialog.component';
 import { AddMarkOnMapDialogComponent } from './map/add-mark-on-map-dialog/add-mark-on-map-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { ChallengeComponent } from './challenge/challenge.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     VotingMapComponent,
     VoteDialogComponent,
     MapDialogComponent,
-    AddMarkOnMapDialogComponent
+    AddMarkOnMapDialogComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,
