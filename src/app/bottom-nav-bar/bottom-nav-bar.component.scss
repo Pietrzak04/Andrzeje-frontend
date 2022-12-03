@@ -2,9 +2,9 @@
 
 .bottom-nav {
   @include bottom-nav.root(
-    $background-color: #009688,
+    $background-color: #ffffff,
     $active-color: #FFFFFF,
-    $inactive-color: #E0E0E0
+    $inactive-color: #5b3d3d
   );
 }
 
