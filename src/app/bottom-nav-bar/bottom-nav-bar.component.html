@@ -1,17 +1,21 @@
 <nav class="bottom-nav">
   <a class="bottom-nav__destination" [class]="href == '/' ? 'selected' : ''"  routerLink="">
-    <span class="bottom-nav__label">Map</span>
+    <mat-icon class="icon-place"> place</mat-icon>
+    <span class="bottom-nav__label">Location</span>
   </a>
 
   <a class="bottom-nav__destination" [class]="href == '/challengeMap' ? 'selected' : ''" routerLink="/challengeMap">
+    <mat-icon>grade</mat-icon>
     <span class="bottom-nav__label" >Challenges</span>
   </a>
 
   <a class="bottom-nav__destination" [class]="href == '/voting' ? 'selected' : ''" routerLink="/voting" >
+    <mat-icon>pan_tool</mat-icon>
     <span class="bottom-nav__label" >Voting</span>
   </a>
 
   <a class="bottom-nav__destination" [class]="href == '/profile' ? 'selected' : ''" routerLink="/profile">
+    <mat-icon class="icon-person">person</mat-icon>
     <span class="bottom-nav__label" >Profile</span>
   </a>
 </nav>
