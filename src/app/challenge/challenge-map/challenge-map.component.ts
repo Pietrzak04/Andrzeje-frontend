@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { EscapePointsService } from '../../data-services/escape-points.service';
-import { MatDialog } from '@angular/material/dialog';
+import {Component, OnInit} from '@angular/core';
+import {EscapePointsService} from '../../data-services/escape-points.service';
+import {MatDialog} from '@angular/material/dialog';
 import * as L from 'leaflet';
-import { EscapePoints } from '../../data-services/data-interfaces/escape-points-interface';
-import { MapDialogComponent } from '../../map/map-dialog/map-dialog.component';
+import {EscapePoints} from '../../data-services/data-interfaces/escape-points-interface';
+import {MapDialogComponent} from '../../map/map-dialog/map-dialog.component';
 
 @Component({
   selector: 'app-challenge-map',
   templateUrl: './challenge-map.component.html',
   styleUrls: ['./challenge-map.component.scss']
 })
-export class ChallengeMapComponent implements OnInit{
+export class ChallengeMapComponent implements OnInit {
   private mapChallenge: any;
-  constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
+
+  constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {
+  }
 
   private initMap(): void {
 
     this.mapChallenge = L.map('map', {
-      center: [ 53.4481, 14.5372 ],
+      center: [53.4481, 14.5372],
       zoom: 10
     });
 
@@ -31,23 +33,36 @@ export class ChallengeMapComponent implements OnInit{
 
     let escapePoints = this.escapePointsService.getEscapePoints();
 
-    escapePoints.forEach(value => {
-      const marker = L.marker([value.latitude, value.longitude]);
-      marker.addTo(this.mapChallenge);
+    let challengeEscapePointsArray = this.escapePointsService.getEscapePointsVotesList();
 
-      marker.on('click', () => {
-        this.openDialog(value);
+    challengeEscapePointsArray.sort((a, b) => (a.votesQuantity > b.votesQuantity ? -1 : 1));
+
+    for (let i = 0; i < 3; i++) {
+      let point: EscapePoints;
+      escapePoints.forEach(value => {
+        if (value.id == challengeEscapePointsArray[i].escapePointId) {
+          point = value;
+
+          console.log("dupa");
+
+          const marker = L.marker([point.latitude, point.longitude]);
+          marker.addTo(this.mapChallenge);
+
+          marker.on('click', () => {
+            this.openDialog(point);
+          })
+        }
       })
-    })
+    }
   }
 
-  openDialog(value: EscapePoints){
+  openDialog(value: EscapePoints) {
     this.dialog.open(MapDialogComponent, {
       data: value
     })
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.mapChallenge.remove();
   }
 
