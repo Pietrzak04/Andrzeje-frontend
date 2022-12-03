@@ -5,7 +5,7 @@ import {EscapePoints} from "./data-interfaces/escape-points-interface";
   providedIn: 'root'
 })
 export class EscapePointsService {
-  allEscapePoints: Array<EscapePoints> = [
+  private allEscapePoints: Array<EscapePoints> = [
     {
       "name": "ładny mostek",
       "latitude": 53.4452,

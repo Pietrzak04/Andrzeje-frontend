@@ -9,6 +9,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { VotingComponent } from './voting/voting.component';
 
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,8 @@ import { VotingComponent } from './voting/voting.component';
     BottomNavBarComponent,
     EscapePointsMapComponent,
     ChallengeMapComponent,
+    UserProfileComponent,
+    MapComponent,
     UserProfileComponent,
     VotingComponent
   ],
