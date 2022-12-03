@@ -1,0 +1,28 @@
+.icon-person {
+  font-size: 200px;
+  height: 200px ;
+  width: 200px;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #777777;
+  color: white;
+}
+
+.text-label
+{
+  margin: 10px;
+  height: 70px;
+  width: 150px;
+
+}
+
+.point-label{
+  margin: 10px;
+  height: 100px;
+  width: 200px;
+}
+
+
