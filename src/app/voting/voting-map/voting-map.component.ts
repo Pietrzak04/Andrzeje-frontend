@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 import * as L from "leaflet";
 
 @Component({
@@ -6,12 +6,12 @@ import * as L from "leaflet";
   templateUrl: './voting-map.component.html',
   styleUrls: ['./voting-map.component.scss']
 })
-export class VotingMapComponent {
+export class VotingMapComponent implements OnInit{
 
-  private map: any;
+  private mapVoting: any;
 
   private initMap(): void {
-    this.map = L.map('map', {
+    this.mapVoting = L.map('map', {
       center: [ 53.4481, 14.5372 ],
       zoom: 10
     });
@@ -22,7 +22,11 @@ export class VotingMapComponent {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
 
-    tiles.addTo(this.map);
+    tiles.addTo(this.mapVoting);
+  }
+
+  ngOnInit(){
+    this.mapVoting.remove();
   }
 
   ngAfterViewInit() {

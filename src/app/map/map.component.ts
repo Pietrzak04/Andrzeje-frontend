@@ -1,4 +1,4 @@
-import { Component, AfterViewInit  } from '@angular/core';
+import {Component, AfterViewInit, OnDestroy, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
@@ -6,7 +6,7 @@ import * as L from 'leaflet';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements AfterViewInit{
+export class MapComponent implements AfterViewInit, OnInit{
 
   private map: any;
 
@@ -23,6 +23,10 @@ export class MapComponent implements AfterViewInit{
     });
 
     tiles.addTo(this.map);
+  }
+
+  ngOnInit(){
+    this.map.remove();
   }
 
   ngAfterViewInit() {
