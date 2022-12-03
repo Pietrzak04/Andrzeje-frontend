@@ -4,6 +4,7 @@ import {EscapePointsService} from "../../data-services/escape-points.service";
 import {MatDialog} from "@angular/material/dialog";
 import {EscapePoints} from "../../data-services/data-interfaces/escape-points-interface";
 import {MapDialogComponent} from "../../map/map-dialog/map-dialog.component";
+import {VoteDialogComponent} from "./vote-dialog/vote-dialog.component";
 
 @Component({
   selector: 'app-voting-map',
@@ -14,7 +15,7 @@ export class VotingMapComponent implements OnInit{
 
   private mapVoting: any;
 
-  constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
+  constructor(public escapePointsService: EscapePointsService, private dialog: MatDialog) {}
 
   private initMap(): void {
     this.mapVoting = L.map('map', {
@@ -43,9 +44,12 @@ export class VotingMapComponent implements OnInit{
   }
 
   openDialog(value: EscapePoints){
-    this.dialog.open(MapDialogComponent, {
-      data: value
-    })
+    if(this.escapePointsService.getCurrentUserVotes() > 0) {
+
+      this.dialog.open(VoteDialogComponent, {
+        data: value
+      })
+    }
   }
 
   ngOnInit(){

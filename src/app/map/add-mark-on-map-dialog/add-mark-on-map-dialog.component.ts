@@ -13,7 +13,7 @@ export class AddMarkOnMapDialogComponent {
   constructor(private matDialog: MatDialog ,private escapePointsService: EscapePointsService,@Inject(MAT_DIALOG_DATA) public data: {lat:number, lng: number}) {}
 
   addEscapePlace() {
-    this.escapePointsService.addEscapePoint({name: this.name, latitude: this.data.lat,
+    this.escapePointsService.addEscapePoint({id: 999, name: this.name, latitude: this.data.lat,
       longitude: this.data.lng, description: this.description });
     this.matDialog.closeAll();
   }
