@@ -13,8 +13,6 @@ button[disabled]{
 
 .text-label
 {
-  display:flex;
-  flex-direction: column;
   margin: 10px;
   height: 70px;
   width: 150px;
@@ -22,8 +20,6 @@ button[disabled]{
 }
 
 .point-label{
-  display:flex;
-  flex-direction: column;
   margin: 10px;
   height: 100px;
   width: 200px;
