@@ -27,7 +27,9 @@ import { MatButtonModule } from '@angular/material/button';
     MapComponent,
     UserProfileComponent,
     VotingComponent,
-    MapDialogComponent
+    MapDialogComponent,
+    VotingComponent,
+    VotingMapComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     MatIconModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

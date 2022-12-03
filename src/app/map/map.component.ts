@@ -24,7 +24,7 @@ L.Marker.prototype.options.icon = iconDefault;
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements AfterViewInit{
+export class MapComponent implements AfterViewInit, OnInit{
 constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
 
   private map: any;
@@ -59,6 +59,10 @@ constructor(private escapePointsService: EscapePointsService, private dialog: Ma
     this.dialog.open(MapDialogComponent, {
       data: value
     })
+  }
+
+  ngOnInit(){
+    this.map.remove();
   }
 
   ngAfterViewInit() {
