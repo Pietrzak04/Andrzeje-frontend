@@ -31,7 +31,7 @@ export class EscapePointsService {
       "description": "baszta przy gocławiu"
     },
     {
-      "name": "plaża głembokie",
+      "name": "plaża głębokie",
       "latitude": 53.47237,
       "longitude": 14.48485,
       "description": "idealna do odpoczynku"

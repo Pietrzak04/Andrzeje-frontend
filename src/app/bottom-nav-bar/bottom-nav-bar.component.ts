@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./bottom-nav-bar.component.scss']
 })
 export class BottomNavBarComponent {
+  public href = "";
 
+  constructor(private router: Router) {
+    router.events.subscribe(()=>{
+      this.href = location.pathname
+    })
+  }
 }

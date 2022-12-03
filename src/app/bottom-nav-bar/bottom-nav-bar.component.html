@@ -1,17 +1,17 @@
 <nav class="bottom-nav">
-  <a class="bottom-nav__destination"  routerLink="">
+  <a class="bottom-nav__destination" [class]="href == '/' ? 'selected' : ''"  routerLink="">
     <span class="bottom-nav__label">Map</span>
   </a>
 
-  <a class="bottom-nav__destination" routerLink="/challengeMap">
+  <a class="bottom-nav__destination" [class]="href == '/challengeMap' ? 'selected' : ''" routerLink="/challengeMap">
     <span class="bottom-nav__label" >Challenges</span>
   </a>
 
-  <a class="bottom-nav__destination" routerLink="/voting">
+  <a class="bottom-nav__destination" [class]="href == '/voting' ? 'selected' : ''" routerLink="/voting" >
     <span class="bottom-nav__label" >Voting</span>
   </a>
 
-  <a class="bottom-nav__destination" routerLink="/profile">
+  <a class="bottom-nav__destination" [class]="href == '/profile' ? 'selected' : ''" routerLink="/profile">
     <span class="bottom-nav__label" >Profile</span>
   </a>
 </nav>

@@ -4,7 +4,12 @@
   @include bottom-nav.root(
     $background-color: #ffffff,
     $active-color: #FFFFFF,
-    $inactive-color: #5b3d3d
+    $inactive-color: #5b3d3d,
+
   );
+}
+
+.selected{
+  background-color: #ccc6c6;
 }
 
