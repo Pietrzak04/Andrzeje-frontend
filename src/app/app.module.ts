@@ -10,7 +10,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { VotingComponent } from './voting/voting.component';
 
 import { MapComponent } from './map/map.component';
-
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { VotingMapComponent } from './voting/voting-map/voting-map.component';
+import {MatCardModule} from "@angular/material/card";
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +23,17 @@ import { MapComponent } from './map/map.component';
     UserProfileComponent,
     MapComponent,
     UserProfileComponent,
-    VotingComponent
+    VotingComponent,
+    VotingMapComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
