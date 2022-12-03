@@ -7,13 +7,15 @@ import { RouterModule } from '@angular/router';
 import { EscapePointsMapComponent } from './escape-points-map/escape-points-map.component';
 import { ChallengeMapComponent } from './challenge-map/challenge-map.component';
 import { AppRoutingModule } from './routing/app-routing.module';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BottomNavBarComponent,
     EscapePointsMapComponent,
-    ChallengeMapComponent
+    ChallengeMapComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
