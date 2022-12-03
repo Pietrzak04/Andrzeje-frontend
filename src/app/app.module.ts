@@ -10,6 +10,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { VotingComponent } from './voting/voting.component';
 
 import { MapComponent } from './map/map.component';
+import { MapDialogComponent } from './map/map-dialog/map-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { MapComponent } from './map/map.component';
     UserProfileComponent,
     MapComponent,
     UserProfileComponent,
-    VotingComponent
+    VotingComponent,
+    MapDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

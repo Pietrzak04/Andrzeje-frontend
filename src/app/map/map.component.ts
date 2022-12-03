@@ -1,6 +1,10 @@
 import { Component, AfterViewInit  } from '@angular/core';
 import * as L from 'leaflet';
 import { EscapePointsService } from '../data-services/escape-points.service';
+import { MatDialog} from '@angular/material/dialog';
+import { MapDialogComponent } from './map-dialog/map-dialog.component';
+import { EscapePoints } from '../data-services/data-interfaces/escape-points-interface';
+
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
 const shadowUrl = 'assets/marker-shadow.png';
@@ -21,7 +25,7 @@ L.Marker.prototype.options.icon = iconDefault;
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit{
-constructor(private escapePointsService: EscapePointsService) {}
+constructor(private escapePointsService: EscapePointsService, private dialog: MatDialog) {}
 
   private map: any;
 
@@ -44,6 +48,16 @@ constructor(private escapePointsService: EscapePointsService) {}
     escapePoints.forEach(value => {
       const marker = L.marker([value.latitude, value.longitude]);
       marker.addTo(this.map);
+
+      marker.on('click', () => {
+          this.openDialog(value);
+      })
+    })
+  }
+
+  openDialog(value: EscapePoints){
+    this.dialog.open(MapDialogComponent, {
+      data: value
     })
   }
 
