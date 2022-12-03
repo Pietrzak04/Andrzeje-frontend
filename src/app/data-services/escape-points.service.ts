@@ -7,6 +7,8 @@ import {EscapePointsVotes} from "./data-interfaces/escape-points-votes-interface
   providedIn: 'root'
 })
 export class EscapePointsService {
+  currentUser = 0;
+
   private allEscapePoints: Array<EscapePoints> = [
     {
       "id": 0,
@@ -78,7 +80,7 @@ export class EscapePointsService {
   private escapePointsVotesList: Array<EscapePointsVotes> = [
     {
       "escapePointId": 0,
-      "votesQuantity": 0
+      "votesQuantity": 2
     },
     {
       "escapePointId": 1,
@@ -90,20 +92,36 @@ export class EscapePointsService {
     },
     {
       "escapePointId": 3,
-      "votesQuantity": 0
+      "votesQuantity": 2
     },
     {
       "escapePointId": 4,
-      "votesQuantity": 0
+      "votesQuantity": 1
     },
     {
       "escapePointId": 5,
-      "votesQuantity": 0
+      "votesQuantity": 1
     },
   ]
 
   getEscapePoints(): Array<EscapePoints>{
     return this.allEscapePoints
+  }
+
+  getCurrentUserVotes(): number{
+    return this.usersArray[this.currentUser].votes;
+  }
+
+  getEscapePointsVotesList(): Array<EscapePointsVotes>{
+    return this.escapePointsVotesList;
+  }
+
+  decrementUserVote(userId: number){
+    this.usersArray[userId].votes --;
+  }
+
+  incrementEscapePointVotesQuantity(escapePointId: number){
+    this.escapePointsVotesList[escapePointId].votesQuantity ++;
   }
 
   addEscapePoint(escapePoint: EscapePoints){
