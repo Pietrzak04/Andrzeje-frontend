@@ -4,6 +4,7 @@ import { EscapePointsService } from '../data-services/escape-points.service';
 import { MatDialog} from '@angular/material/dialog';
 import { MapDialogComponent } from './map-dialog/map-dialog.component';
 import { EscapePoints } from '../data-services/data-interfaces/escape-points-interface';
+import { AddMarkOnMapDialogComponent } from './add-mark-on-map-dialog/add-mark-on-map-dialog.component';
 
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
@@ -53,10 +54,21 @@ constructor(private escapePointsService: EscapePointsService, private dialog: Ma
           this.openDialog(value);
       })
     })
+
+    this.map.on('click', (e:any) => {
+      this.openDialogAdding({lat: e.latlng.lat, lng: e.latlng.lng});
+      L.marker([e.latlng.lat, e.latlng.lng]).addTo(this.map);
+    })
   }
 
   openDialog(value: EscapePoints){
     this.dialog.open(MapDialogComponent, {
+      data: value
+    })
+  }
+
+  openDialogAdding(value: {}){
+    this.dialog.open(AddMarkOnMapDialogComponent, {
       data: value
     })
   }

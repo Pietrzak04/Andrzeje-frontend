@@ -54,4 +54,8 @@ export class EscapePointsService {
   getEscapePoints(): Array<EscapePoints>{
     return this.allEscapePoints
   }
+
+  addEscapePoint(escapePoint: EscapePoints){
+    this.allEscapePoints.push(escapePoint);
+  }
 }

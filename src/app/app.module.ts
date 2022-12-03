@@ -16,6 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { AddMarkOnMapDialogComponent } from './map/add-mark-on-map-dialog/add-mark-on-map-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MatButtonModule } from '@angular/material/button';
     MapComponent,
     UserProfileComponent,
     VotingComponent,
-    MapDialogComponent
+    MapDialogComponent,
+    AddMarkOnMapDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     MatIconModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
